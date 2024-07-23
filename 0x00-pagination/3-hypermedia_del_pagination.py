@@ -53,7 +53,8 @@ class Server:
         if index in sorted_indices:
             start_index_pos = sorted_indices.index(index)
         else:
-            start_index_pos = next(i for i, idx in enumerate(sorted_indices) if idx > index)
+            start_index_pos = next(i for i, idx in enumerate(
+                sorted_indices) if idx > index)
 
         # Get the page of data starting from the given index
         data = []
@@ -65,7 +66,8 @@ class Server:
             next_index += 1
 
         # Ensure next_index does not go out of bounds
-        next_index = sorted_indices[next_index] if next_index < len(sorted_indices) else None
+        next_index = sorted_indices[next_index] if next_index < len(
+                sorted_indices) else None
 
         return {
                 "index": index,
