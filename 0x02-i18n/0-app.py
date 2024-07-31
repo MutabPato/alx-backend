@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Basic Flask App"""
+""" i18n - Basic Flask App """
 
 from flask import Flask, render_template
 from flask_babel import Babel, gettext as _
