@@ -14,10 +14,10 @@ class Config():
     configure available languages
     """
     LANGUAGES = ["en", "fr"]
+    BABEL_DEFAULT_LOCALE = "en"
+    BABEL_DEFAULT_TIMEZONE = "UTC"
 
 
-app.config['BABEL_DEFAULT_LOCALE'] = "en"
-app.config['BABEL_DEFAULT_TIMEZONE'] = "UTC"
 app.config.from_object(Config)
 
 
