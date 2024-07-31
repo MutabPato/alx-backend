@@ -1,5 +1,18 @@
 #!/usr/bin/env python3
-"""Get locale from request"""
+"""i18n
+Parametrize templates
+
+Functions:
+    get_locale: Determines the best match for supported languages based on the
+                request's accept languages.
+    index: Renders the index page.
+
+Usage:
+    To run the application, execute the script with a Python interpreter.
+
+Example:
+    $ ./0-app.py
+"""
 
 from flask import Flask, render_template, request
 from flask_babel import Babel
@@ -26,7 +39,7 @@ babel = Babel(app)
 
 
 @babel.localeselector
-def get_locale():
+def get_locale() -> str:
     """
     determine the best match with our supported languages.
     """
