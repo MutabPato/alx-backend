@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""i18n"""
+"""Get locale from request"""
 
 from flask import Flask, render_template
 from flask_babel import Babel
@@ -40,7 +40,7 @@ def index() -> Any:
 
     Returns: Rendered HTML template.
     """
-    return render_template("0-index.html")
+    return render_template("2-index.html")
 
 
 if __name__ == "__main__":
