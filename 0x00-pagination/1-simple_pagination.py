@@ -33,6 +33,9 @@ class Server:
         return self.__dataset
 
     def get_page(self, page: int = 1, page_size: int = 10) -> List[List]:
+        """
+        Retrieves a page of data
+        """
         assert isinstance(
                 page, int) and page > 0, "page must be an integer > 0"
         assert isinstance(
