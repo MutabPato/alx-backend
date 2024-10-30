@@ -27,6 +27,7 @@ class LRUCache(BaseCaching):
             return
 
         if key in self.cache_data:
+            # Updating the existing key by removing and readding it
             self.cache_data.pop(key)
 
         elif len(self.cache_data) >= BaseCaching.MAX_ITEMS:
@@ -38,5 +39,10 @@ class LRUCache(BaseCaching):
     def get(self, key):
         """return the value in self.cache_data linked to key
         """
+        if key is None or key not in self.cache_data:
+            return
 
-        return self.cache_data.get(key, None)
+        # Moving the accessed item to the end to mark it as recently used
+        item = self.cache_data.pop(key)
+        self.cache_data[key] = item
+        return item
